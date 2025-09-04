@@ -51,15 +51,16 @@ export default function Login() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="username" className="text-foreground font-medium">
-                  Kullanıcı Adı
+                  E-posta veya Kullanıcı Adı
                 </Label>
                 <Input
                   id="username"
                   type="text"
-                  placeholder="nariyuka"
+                  placeholder="kullanici@email.com"
                   value={formData.username}
                   onChange={(e) => setFormData({...formData, username: e.target.value})}
                   className="bg-input border-border text-foreground placeholder:text-muted-foreground"
+                  required
                 />
               </div>
 
@@ -75,6 +76,8 @@ export default function Login() {
                     value={formData.password}
                     onChange={(e) => setFormData({...formData, password: e.target.value})}
                     className="bg-input border-border text-foreground placeholder:text-muted-foreground pr-10"
+                    required
+                    minLength={6}
                   />
                   <Button
                     type="button"
