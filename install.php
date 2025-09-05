@@ -30,7 +30,7 @@ if ($_POST) {
             $sql = "
             CREATE TABLE IF NOT EXISTS `users` (
                 `id` INT AUTO_INCREMENT PRIMARY KEY,
-                `email` VARCHAR(255) UNIQUE NOT NULL,
+                `email` VARCHAR(191) UNIQUE NOT NULL,
                 `username` VARCHAR(50) UNIQUE NOT NULL,
                 `password_hash` VARCHAR(255) NOT NULL,
                 `role` ENUM('admin', 'publisher', 'buyer') NOT NULL DEFAULT 'buyer',
